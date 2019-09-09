@@ -18,7 +18,7 @@ public class cargos {
  private String descripcion;
 
     /**
-     * @return the idcargo
+     * @return the idcargo .
      */
     public Integer getIdcargo() {
         return idcargo;
