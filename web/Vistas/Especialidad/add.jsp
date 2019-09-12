@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Agregar Especialidad</h1>
+        <form action="ControladorEspecialidad">
+            NOMBRE:<br>
+            <input type="text" name="txtNombre"><br>
+            DESCRIPCION:<br>
+            <input type="text" name="txtDescripcion"><br>
+            <input type="submit" name="accion" value="Agregar">
+        </form>
     </body>
 </html>

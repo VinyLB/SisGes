@@ -5,8 +5,11 @@
  */
 package Controlador;
 
+import Clases.Especialidad;
+import ModeloDAO.EspecialidadDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +24,8 @@ public class ControladorEspecialidad extends HttpServlet {
     String listar="Vistas/Especialidad/listar.jsp";
     String add="Vistas/Especialidad/add.jsp";
     String edit="Vistas/Especialidad/edit.jsp";
+    Especialidad especialidad = new Especialidad();
+    EspecialidadDAO dao = new EspecialidadDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -54,6 +59,15 @@ public class ControladorEspecialidad extends HttpServlet {
         String action = request.getParameter("accion");
         if(action.equalsIgnoreCase("listar")){
             acceso=listar;            
+        }else if(action.equalsIgnoreCase("add")){
+            acceso = add;
+        }else if(action.equalsIgnoreCase("Agregar")){
+            String nombre = request.getParameter("txtNombre");
+            String descripcion = request.getParameter("txtDescripcion");
+            especialidad.setNombre(nombre);
+            especialidad.setDescripcion(descripcion);
+            dao.add(especialidad);
+            acceso = listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);

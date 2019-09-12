@@ -12,6 +12,7 @@
     <body>
         <div>
             <h1>Especialidades</h1>
+            <a href="ControladorEspecialidad?accion=add">Agregar Nuevo</a>
             <table border="1">
                 <thead>
                     <tr>

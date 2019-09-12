@@ -55,7 +55,15 @@ public class EspecialidadDAO implements CRUDespecialidad{
 
     @Override
     public boolean add(Especialidad especialidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "insert into especialidades(nombre, descripcion) values('" + especialidad.getNombre() + "','" + especialidad.getDescripcion() + "')";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("ModeloDAO.EspecialidadDAO.add()" + e);
+        }
+        return false;
     }
 
     @Override
