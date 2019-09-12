@@ -14,9 +14,9 @@
     <body>
         <div>
             <h1>Agregar el Tipo de Técnico</h1>
-            <form>
+            <form action="ControladorTipoTecnico">
                 Tipo:<br>
-                <input type="text" name="txtTipoTecnico"><br>
+                <input type="text" name="txtNombre"><br>
                 Descripción:<br>
                 <input type="text" name="txtDescripcion"><br>
                 <input type="submit" name="accion" value="Agregar"><br>
