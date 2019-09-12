@@ -37,7 +37,7 @@
                         <td><%=especialidad.getNombre()%></td>
                         <td><%=especialidad.getDescripcion()%></td>
                         <td>
-                            <a>Editar</a>
+                            <a href="ControladorEspecialidad?accion=Editar&idEspecialidad=<%= especialidad.getIdEspecialidad()%>">Editar</a>
                             <a>Remover</a>
                         </td>
                     </tr>

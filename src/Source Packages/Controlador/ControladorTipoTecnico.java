@@ -27,7 +27,7 @@ public class ControladorTipoTecnico extends HttpServlet {
     
     TipoTecnico tipoTecnico=new TipoTecnico();
     TipoTecnicoDAO tipoTecnicoDAO = new TipoTecnicoDAO();
-    
+    int id;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,6 +71,20 @@ public class ControladorTipoTecnico extends HttpServlet {
             tipoTecnico.setNombre(nombre);
             tipoTecnico.setDescripcion(descripcion);
             tipoTecnicoDAO.add(tipoTecnico);
+            acceso=listar;
+        }
+        else if(action.equalsIgnoreCase("editar")){
+            request.setAttribute("idTipoTecnico", request.getParameter("id"));
+            acceso=edit;
+        }
+        else if(action.equalsIgnoreCase("Actualizar")){
+            id=Integer.parseInt(request.getParameter("txtIdTipoTecnico"));
+            String nombre=request.getParameter("txtNombre");
+            String descripcion=request.getParameter("txtDescripcion");
+            tipoTecnico.setIdTipoTecnico(id);
+            tipoTecnico.setNombre(nombre);
+            tipoTecnico.setDescripcion(descripcion);
+            tipoTecnicoDAO.edit(tipoTecnico);
             acceso=listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);

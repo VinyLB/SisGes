@@ -26,6 +26,7 @@ public class ControladorEspecialidad extends HttpServlet {
     String edit="Vistas/Especialidad/edit.jsp";
     Especialidad especialidad = new Especialidad();
     EspecialidadDAO dao = new EspecialidadDAO();
+    int id;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -67,6 +68,18 @@ public class ControladorEspecialidad extends HttpServlet {
             especialidad.setNombre(nombre);
             especialidad.setDescripcion(descripcion);
             dao.add(especialidad);
+            acceso = listar;
+        }else if(action.equalsIgnoreCase("Editar")){
+            request.setAttribute("idEspecialidad", request.getParameter("idEspecialidad"));
+            acceso=edit;
+        }else if(action.equalsIgnoreCase("Actualizar")){
+            id=Integer.parseInt(request.getParameter("txtId"));
+            String nombre = request.getParameter("txtNombre");
+            String descripcion = request.getParameter("txtDescripcion");
+            especialidad.setIdEspecialidad(id);
+            especialidad.setNombre(nombre);
+            especialidad.setDescripcion(descripcion);
+            dao.edit(especialidad);
             acceso = listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
