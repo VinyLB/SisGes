@@ -13,7 +13,8 @@
     </head>
     <body>
         <div>
-            <a href="ControladorEspecialidad?accion=listar">Listar Especialidad</a>
+            <a href="ControladorEspecialidad?accion=listar">Listar Especialidad</a><br/>
+            <a href="ControladorTipoTecnico?accion=listar">Listar Tipo de Tecnicos</a>
         </div>
     </body>
 </html>
