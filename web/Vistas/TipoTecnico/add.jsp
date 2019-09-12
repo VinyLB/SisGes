@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Añadir TipoTecnico</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div>
+            <h1>Agregar el Tipo de Técnico</h1>
+            <form action="ControladorTipoTecnico">
+                Tipo:<br>
+                <input type="text" name="txtNombre"><br>
+                Descripción:<br>
+                <input type="text" name="txtDescripcion"><br>
+                <input type="submit" name="accion" value="Agregar"><br>
+            </form>
+        </div>
     </body>
 </html>

@@ -56,7 +56,14 @@ public class TipoTecnicoDAO implements CRUDtipotecnico {
 
     @Override
     public boolean add(TipoTecnico tipoTecnico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="insert into TipoTecnicos(Nombre, Descripcion)values('"+tipoTecnico.getNombre()+"','"+tipoTecnico.getDescripcion()+"')";
+        try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
