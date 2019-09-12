@@ -4,6 +4,8 @@
     Author     : mflb0
 --%>
 
+<%@page import="Clases.Especialidad"%>
+<%@page import="ModeloDAO.EspecialidadDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +14,23 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div>
+            <%
+                EspecialidadDAO especialidadDAO = new EspecialidadDAO();
+                int id = Integer.parseInt((String)request.getAttribute("idEspecialidad"));
+                Especialidad especialidad=(Especialidad) especialidadDAO.list(id);
+                
+            %>
+            <h1>Editar Especialidad</h1>
+            <form action="ControladorEspecialidad">
+                NOMBRE:<br>
+                <input type="text" name="txtNombre" value="<%=especialidad.getNombre()%>"><br>
+                DESCRIPCION:<br>
+                <input type="text" name="txtDescripcion" value="<%=especialidad.getDescripcion()%>"><br>
+                <input type="hidden" name="txtId" value="<%=especialidad.getIdEspecialidad()%>"><br>
+                <input type="submit" name="accion" value="Actualizar"><br>
+                <a href="ControladorEspecialidad?accion=listar">Regresar</a>
+            </form>
+        </div>
     </body>
 </html>
