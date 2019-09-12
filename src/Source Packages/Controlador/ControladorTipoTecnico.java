@@ -62,6 +62,16 @@ public class ControladorTipoTecnico extends HttpServlet {
         String action=request.getParameter("accion");
         if(action.equalsIgnoreCase("listar")){
             acceso=listar;
+        }else if(action.equalsIgnoreCase("add")){
+            acceso=add;
+        }
+        else if(action.equalsIgnoreCase("Agregar")){
+            String nombre=request.getParameter("txtNombre");
+            String descripcion=request.getParameter("txtDescripcion");
+            tipoTecnico.setNombre(nombre);
+            tipoTecnico.setDescripcion(descripcion);
+            tipoTecnicoDAO.add(tipoTecnico);
+            acceso=listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
