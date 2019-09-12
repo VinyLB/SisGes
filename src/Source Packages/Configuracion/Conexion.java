@@ -15,7 +15,7 @@ public class Conexion {
         
         try {
             String user = "root";
-            String pass = "fernandolb";
+            String pass = "fernandolb";     //Contraseña de la base de datos----
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/sisgesdb?user=" +
                 user + "&password=" + pass;
