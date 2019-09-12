@@ -19,7 +19,7 @@
                 <input type="text" name="txtTipoTecnico"><br>
                 Descripción:<br>
                 <input type="text" name="txtDescripcion"><br>
-                <input type="submit" name="accion" value="Añadir"><br>
+                <input type="submit" name="accion" value="Agregar"><br>
             </form>
         </div>
     </body>
