@@ -43,6 +43,9 @@ public class TipoTecnico {
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
     }
+
+    public TipoTecnico() {
+    }
     
     
     
