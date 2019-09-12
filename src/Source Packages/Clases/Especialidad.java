@@ -43,6 +43,9 @@ public class Especialidad {
         this.nombre = nombre;
         this.Descripcion = Descripcion;
     }
+
+    public Especialidad() {
+    }
     
     
 }
