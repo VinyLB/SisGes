@@ -6,7 +6,6 @@
 package Clases;
 
 
-
 /**
  *
  * @author DELL 14
@@ -16,6 +15,10 @@ public class Cargo {
  private Integer idcargo;
  private String nombre;
  private String descripcion;
+
+    public Cargo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public Integer getIdcargo() {
         return idcargo;
