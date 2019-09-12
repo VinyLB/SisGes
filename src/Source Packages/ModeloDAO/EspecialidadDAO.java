@@ -24,7 +24,7 @@ public class EspecialidadDAO implements CRUDespecialidad{
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Especialidad especialidad1 = new Especialidad();
+    Especialidad especialidad = new Especialidad();
     
     @Override
     public List listar() {
@@ -44,13 +44,28 @@ public class EspecialidadDAO implements CRUDespecialidad{
             }
             
         } catch (Exception e) {
+            System.out.println("ModeloDAO.EspecialidadDAO.listar() " + e);
         }
         return list;
     }
 
     @Override
     public Especialidad list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="select * from especialidades where idEspecialidad=" + id;
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                especialidad.setIdEspecialidad(rs.getInt("idEspecialidad"));
+                especialidad.setNombre(rs.getString("nombre"));
+                especialidad.setDescripcion(rs.getString("descripcion"));
+                
+            }
+            
+        } catch (Exception e) {
+        }
+        return especialidad;
     }
 
     @Override
@@ -68,7 +83,15 @@ public class EspecialidadDAO implements CRUDespecialidad{
 
     @Override
     public boolean edit(Especialidad especialidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "update especialidades set nombre='" + especialidad.getNombre() + "',descripcion='" + especialidad.getDescripcion() + "' where idEspecialidad=" + especialidad.getIdEspecialidad();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareCall(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("ModeloDAO.EspecialidadDAO.edit() " + e);
+        }
+        return false;
     }
 
     @Override

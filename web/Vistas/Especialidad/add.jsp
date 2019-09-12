@@ -12,13 +12,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Agregar Especialidad</h1>
-        <form action="ControladorEspecialidad">
-            NOMBRE:<br>
-            <input type="text" name="txtNombre"><br>
-            DESCRIPCION:<br>
-            <input type="text" name="txtDescripcion"><br>
-            <input type="submit" name="accion" value="Agregar">
-        </form>
+        <div>
+            <h1>Agregar Especialidad</h1>
+            <form action="ControladorEspecialidad">
+                NOMBRE:<br>
+                <input type="text" name="txtNombre"><br>
+                DESCRIPCION:<br>
+                <input type="text" name="txtDescripcion"><br>
+                <input type="submit" name="accion" value="Agregar"><br>
+                <a href="ControladorEspecialidad?accion=listar">Regresar</a>
+            </form>
+        </div>
+        
     </body>
 </html>
