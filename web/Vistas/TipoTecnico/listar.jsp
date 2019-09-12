@@ -18,7 +18,7 @@
     <body>
         <div>
             <h1>Tipo de Tecnicos</h1>
-            <a href="Controlador?accion=add">Agregar nuevo</a>
+            <a href="ControladorTipoTecnico?accion=add">Agregar nuevo</a>
             <table border="1">
                 <thead>
                     <tr>
