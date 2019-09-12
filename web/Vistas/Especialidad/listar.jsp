@@ -38,12 +38,13 @@
                         <td><%=especialidad.getDescripcion()%></td>
                         <td>
                             <a href="ControladorEspecialidad?accion=Editar&idEspecialidad=<%= especialidad.getIdEspecialidad()%>">Editar</a>
-                            <a>Remover</a>
+                            <a href="ControladorEspecialidad?accion=Eliminar&idEspecialidad=<%= especialidad.getIdEspecialidad()%>">Remover</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
+                <a href="ControladorEspecialidad?accion=Inicio">Regresar</a>
 
         </div>
     </body>

@@ -24,6 +24,7 @@ public class ControladorEspecialidad extends HttpServlet {
     String listar="Vistas/Especialidad/listar.jsp";
     String add="Vistas/Especialidad/add.jsp";
     String edit="Vistas/Especialidad/edit.jsp";
+    String inicio="index.jsp";
     Especialidad especialidad = new Especialidad();
     EspecialidadDAO dao = new EspecialidadDAO();
     int id;
@@ -60,6 +61,8 @@ public class ControladorEspecialidad extends HttpServlet {
         String action = request.getParameter("accion");
         if(action.equalsIgnoreCase("listar")){
             acceso=listar;            
+        }else if(action.equalsIgnoreCase("Inicio")){
+            acceso = inicio;
         }else if(action.equalsIgnoreCase("add")){
             acceso = add;
         }else if(action.equalsIgnoreCase("Agregar")){
@@ -81,11 +84,16 @@ public class ControladorEspecialidad extends HttpServlet {
             especialidad.setDescripcion(descripcion);
             dao.edit(especialidad);
             acceso = listar;
+        }else if(action.equalsIgnoreCase("Eliminar")){
+            id=Integer.parseInt(request.getParameter("idEspecialidad"));
+            especialidad.setIdEspecialidad(id);
+            dao.eliminar(id);
+            acceso  = listar;        
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
-
+            
     /**
      * Handles the HTTP <code>POST</code> method.
      *
