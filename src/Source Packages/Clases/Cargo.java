@@ -12,19 +12,19 @@ package Clases;
  */
 public class Cargo {
     
- private Integer idcargo;
+ private Integer idCargo;
  private String nombre;
  private String descripcion;
 
     public Cargo() {        
     }
 
-    public Integer getIdcargo() {
-        return idcargo;
+    public Integer getIdCargo() {
+        return idCargo;
     }
 
-    public void setIdcargo(Integer idcargo) {
-        this.idcargo = idcargo;
+    public void setIdCargo(Integer idcargo) {
+        this.idCargo = idCargo;
     }
 
     public String getNombre() {
@@ -44,7 +44,7 @@ public class Cargo {
     }
 
     public Cargo(Integer idcargo, String nombre, String descripcion) {
-        this.idcargo = idcargo;
+        this.idCargo = idCargo;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
