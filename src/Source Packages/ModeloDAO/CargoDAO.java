@@ -19,7 +19,7 @@ public class CargoDAO implements CRUDCargos {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Cargo cargo=new Cargo();
+    Cargo c=new Cargo();
 
     @Override
     public List Listar() {
@@ -30,15 +30,15 @@ public class CargoDAO implements CRUDCargos {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next()){
-                Cargo cargo = new Cargo();
-                cargo.setIdCargo(rs.getInt("idCargo"));
-                cargo.setNombre(rs.getString("Nombre"));
-                cargo.setDescripcion(rs.getString("Descripcion"));
-                list.add(cargo);                
+                Cargo car = new Cargo();
+                car.setIdCargo(rs.getInt("idCargo"));
+                car.setNombre(rs.getString("Nombre"));
+                car.setDescripcion(rs.getString("Descripcion"));
+                list.add(car);                
             }
             
         } catch (Exception e) {
-            System.out.println("ModeloDAO.EspecialidadDAO.listar() " + e);
+            System.out.println("ModeloDAO.CargoDAO.listar() " + e);
         }
         return list;
     }
