@@ -31,7 +31,7 @@ public class CargoDAO implements CRUDCargos {
             rs = ps.executeQuery();
             while(rs.next()){
                 Cargo cargo = new Cargo();
-                cargo.setIdcargo(rs.getInt("idCargo"));
+                cargo.setIdCargo(rs.getInt("idCargo"));
                 cargo.setNombre(rs.getString("Nombre"));
                 cargo.setDescripcion(rs.getString("Descripcion"));
                 list.add(cargo);                
@@ -45,13 +45,13 @@ public class CargoDAO implements CRUDCargos {
 
     @Override
     public Cargo list(int idCargo) {
-        String sql="select * from cargos where idCargo=" + idCargo;
+        String sql="select * from cargo where idCargo=" + idCargo;
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next()){
-                cargo.setIdcargo(rs.getInt("idCargo"));
+                cargo.setIdCargo(rs.getInt("idCargo"));
                 cargo.setNombre(rs.getString("nombre"));
                 cargo.setDescripcion(rs.getString("descripcion"));
                 
@@ -64,7 +64,7 @@ public class CargoDAO implements CRUDCargos {
 
     @Override
     public boolean add(Cargo car) {
-        String sql = "insert into cargos(nombre, descripcion) values('" + car.getNombre() + "','" + car.getDescripcion() + "')";
+        String sql = "insert into cargo (nombre, descripcion) values('" + car.getNombre() + "','" + car.getDescripcion() + "')";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -77,7 +77,7 @@ public class CargoDAO implements CRUDCargos {
 
     @Override
     public boolean edit(Cargo car) {
-        String sql = "update cargos set nombre='" + car.getNombre() + "',descripcion='" + car.getDescripcion() + "' where idCargo=" + car.getIdcargo();
+        String sql = "update cargos set nombre='" + car.getNombre() + "',descripcion='" + car.getDescripcion() + "' where idCargo=" + car.getIdCargo();
         try {
             con = cn.getConnection();
             ps = con.prepareCall(sql);
