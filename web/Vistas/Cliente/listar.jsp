@@ -55,9 +55,9 @@
                         <td class="text-center"><%=cliente.getTelefono()%></td>
                         <td class="text-left"><%=cliente.getDireccion()%></td>
                         <td class="text-left"><%=cliente.getCorreo()%></td>
-                        <td>
-                            <a class="btn btn-block btn-info" href="ControladorCliente?accion=Editar&cedulaCliente=<%= cliente.getCedula()%>">Editar</a>
-                            <a class="btn btn-block btn-danger" href="ControladorCliente?accion=Eliminar&cedulaCliente=<%= cliente.getCedula()%>">Remover</a>
+                        <td class="text-center">
+                            <a class="btn btn-info" href="ControladorCliente?accion=Editar&cedulaCliente=<%= cliente.getCedula()%>">Editar</a>
+                            <a class="btn btn-danger" href="ControladorCliente?accion=Eliminar&cedulaCliente=<%= cliente.getCedula()%>">Remover</a>
                         </td>
                     </tr>  
                     <%}%>
