@@ -14,7 +14,8 @@
     <body>
         <div>
             <a href="ControladorEspecialidad?accion=listar">Listar Especialidad</a><br/>
-            <a href="ControladorTipoTecnico?accion=listar">Listar Tipo de Tecnicos</a>
+            <a href="ControladorTipoTecnico?accion=listar">Listar Tipo de Tecnicos</a><br/>
+            <a href="ControladorCargo?accion=listar">Listar Cargo</a><br/>
         </div>
     </body>
 </html>
