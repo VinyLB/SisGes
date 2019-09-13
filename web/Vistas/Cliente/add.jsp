@@ -9,30 +9,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Nuevo Cliente</title>
     </head>
     <body>
         <div>
-            <h1>Agregar Cliente</h1>
+            <h1 class="bg-primary text-center">Agregar Cliente</h1>
             <form action="ControladorCliente">
-                CEDULA:<br>
-                <input type="text" name="txtCedulaCliente"><br>
-                NOMBRE:<br>
-                <input type="text" name="txtNombre"><br>
-                APELLIDO:<br>
-                <input type="text" name="txtApellido"><br>
-                USUARIO:<br>
-                <input type="text" name="txtUsuario"><br>
-                CLAVE:<br>
-                <input type="text" name="txtClave"><br>
-                TELEFONO:<br>
-                <input type="text" name="txtTelefono"><br>
-                DIRECCION:<br>
-                <input type="text" name="txtDireccion"><br>
-                CORREO:<br>
-                <input type="text" name="txtCorreo"><br>
-                <input type="submit" name="accion" value="Agregar"><br>
-                <a href="ControladorCliente?accion=listar">Regresar</a>
+                <div class="form-group-sm">
+                <label for="cedula" class="col-md-1">CEDULA:</label>
+                <input class="form-control" type="text" name="txtCedulaCliente"><br>
+                </div>
+                <label for="nombre" class="col-md-1">NOMBRE:</label>
+                <input class="form-control" type="text" name="txtNombre"><br>
+                <label for="apellido" class="col-md-1">APELLIDO:</label>
+                <input class="form-control" type="text" name="txtApellido"><br>
+                <label for="usuario" class="col-md-1">USUARIO:</label>
+                <input class="form-control" type="text" name="txtUsuario"><br>
+                <label for="clave" class="col-md-1">CLAVE:</label>
+                <input class="form-control" type="password" name="txtClave"><br>
+                <label for="telefono" class="col-md-1">TELEFONO:</label>
+                <input class="form-control" type="text" name="txtTelefono"><br>
+                <label for="direccion" class="col-md-1">DIRECCIÓN:</label>
+                <input class="form-control" type="text" name="txtDireccion"><br>
+                <label for="correo" class="col-md-1">CORREO:</label>
+                <input class="form-control" type="text" name="txtCorreo"><br>
+                <br>
+                <input type="submit" name="accion" value="Agregar" class="btn btn-primary"><br><br>
+                <a class="btn btn-warning" href="ControladorCliente?accion=listar">Regresar</a>
             </form>
         </div>
     </body>

@@ -11,7 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Editar Cliente</title>
     </head>
     <body>
         <div>
@@ -20,25 +21,27 @@
                 String id = (String)request.getAttribute("cedulaCliente");
                 Cliente cliente=(Cliente) clienteDAO.list(id);                
             %>
-            <h1>Editar Especialidad</h1>
+            <h1 class="bg-primary text-center">Editar Cliente</h1>
             <form action="ControladorCliente">
-                NOMBRE:<br>
-                <input type="text" name="txtNombre" value="<%=cliente.getNombre()%>"><br>
-                APELLIDO:<br>
-                <input type="text" name="txtApellido" value="<%=cliente.getApellido()%>"><br>
-                USUARIO:<br>
-                <input type="text" name="txtUsuario" value="<%=cliente.getUsuario()%>"><br>
-                CLAVE:<br>
-                <input type="text" name="txtClave" value="<%=cliente.getClave()%>"><br>
-                TELEFONO:<br>
-                <input type="text" name="txtTelefono" value="<%=cliente.getTelefono()%>"><br>
-                DIRECCION:<br>
-                <input type="text" name="txtDireccion" value="<%=cliente.getDireccion()%>"><br>
-                CORREO:<br>
-                <input type="text" name="txtCorreo" value="<%=cliente.getCorreo()%>"><br>
+                <div class="form-group-sm">
+                <label for="nombre" class="col-md-1">NOMBRE:</label>
+                <input class="form-control" type="text" name="txtNombre" value="<%=cliente.getNombre()%>"><br>
+                </div>
+                <label for="apellido" class="col-md-1">APELLIDO:</label>
+                <input class="form-control" type="text" name="txtApellido" value="<%=cliente.getApellido()%>"><br>
+                <label for="usuario" class="col-md-1">USUARIO:</label>
+                <input class="form-control" type="text" name="txtUsuario" value="<%=cliente.getUsuario()%>"><br>
+                <label for="clave" class="col-md-1">CLAVE:</label>
+                <input class="form-control" type="text" name="txtClave" value="<%=cliente.getClave()%>"><br>
+                <label for="telefono" class="col-md-1">TELEFONO:</label>
+                <input class="form-control" type="text" name="txtTelefono" value="<%=cliente.getTelefono()%>"><br>
+                <label for="direccion" class="col-md-1">DIRECCIÓN:</label>
+                <input class="form-control" type="text" name="txtDireccion" value="<%=cliente.getDireccion()%>"><br>
+                <label for="correo" class="col-md-1">CORREO:</label>
+                <input class="form-control" type="text" name="txtCorreo" value="<%=cliente.getCorreo()%>"><br>
                 <input type="hidden" name="txtCedulaCliente" value="<%=cliente.getCedula()%>"><br>
-                <input type="submit" name="accion" value="Actualizar"><br>
-                <a href="ControladorCliente?accion=listar">Regresar</a>
+                <input type="submit" name="accion" value="Actualizar" class="btn btn-primary"><br><br>
+                <a class="btn btn-warning" href="ControladorCliente?accion=listar">Regresar</a>
             </form>
         </div>
     </body>

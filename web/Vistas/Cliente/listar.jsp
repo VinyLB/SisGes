@@ -13,24 +13,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Lista de Clientes</title>
     </head>
     <body>
         <div>
-            <h1>Clientes</h1>
-            <a href="ControladorCliente?accion=add">Agregar Nuevo</a>
-            <table border="1">
+            <h1 class="bg-primary text-center">Clientes</h1>
+            <div class="container col-md-2">
+                <a class="btn btn-block btn-lg btn-primary" href="ControladorCliente?accion=add">Agregar Nuevo</a><br><br>
+            <div class="container-fluid">
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>CEDULA</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDO</th>
-                        <th>USUARIO</th>
-                        <th>CLAVE</th>
-                        <th>TELEFONO</th>
-                        <th>DIRECCION</th>
-                        <th>CORREO</th>
-                        <th>ACCION</th>
+                        <th class="text-center">CEDULA</th>
+                        <th class="text-center">NOMBRE</th>
+                        <th class="text-center">APELLIDO</th>
+                        <th class="text-center">USUARIO</th>
+                        <th class="text-center">CLAVE</th>
+                        <th class="text-center">TELEFONO</th>
+                        <th class="text-center">DIRECCION</th>
+                        <th class="text-center">CORREO</th>
+                        <th class="text-center">ACCION</th>
                     </tr>
                 </thead>
                 <%
@@ -44,24 +47,27 @@
                 %>
                 <tbody>
                     <tr>
-                        <td><%=cliente.getCedula()%></td>
-                        <td><%=cliente.getNombre()%></td>
-                        <td><%=cliente.getApellido()%></td>
-                        <td><%=cliente.getUsuario()%></td>
-                        <td><%=cliente.getClave()%></td>
-                        <td><%=cliente.getTelefono()%></td>
-                        <td><%=cliente.getDireccion()%></td>
-                        <td><%=cliente.getCorreo()%></td>
+                        <td class="text-center"><%=cliente.getCedula()%></td>
+                        <td class="text-left"><%=cliente.getNombre()%></td>
+                        <td class="text-left"><%=cliente.getApellido()%></td>
+                        <td class="text-center"><%=cliente.getUsuario()%></td>
+                        <td class="text-center"><%=cliente.getClave()%></td>
+                        <td class="text-center"><%=cliente.getTelefono()%></td>
+                        <td class="text-left"><%=cliente.getDireccion()%></td>
+                        <td class="text-left"><%=cliente.getCorreo()%></td>
                         <td>
-                            <a href="ControladorCliente?accion=Editar&cedulaCliente=<%= cliente.getCedula()%>">Editar</a>
-                            <a href="ControladorCliente?accion=Eliminar&cedulaCliente=<%= cliente.getCedula()%>">Remover</a>
+                            <a class="btn btn-block btn-info" href="ControladorCliente?accion=Editar&cedulaCliente=<%= cliente.getCedula()%>">Editar</a>
+                            <a class="btn btn-block btn-danger" href="ControladorCliente?accion=Eliminar&cedulaCliente=<%= cliente.getCedula()%>">Remover</a>
                         </td>
                     </tr>  
                     <%}%>
                 </tbody>
             </table>
-
-            <a href="ControladorCliente?accion=Inicio">Regresar</a>
+            </div>
+                <br>
+            <a class="btn btn-block btn-lg btn-warning" href="ControladorCliente?accion=Inicio">Regresar</a>
+            </div>
+                
         </div>
     </body>
 </html>
