@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Clases.Especialidad;
-import ModeloDAO.EspecialidadDAO;
+import Clases.Cargo;
+import ModeloDAO.CargoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -25,8 +25,8 @@ public class ControladorCargo extends HttpServlet {
     String add="Vistas/Cargo/add.jsp";
     String edit="Vistas/Cargo/edit.jsp";
     String inicio="index.jsp";
-    Cargo especialidad = new Cargo();
-    CargodDAO dao = new Cargo();
+    Cargo Nombre = new Cargo();
+    CargoDAO dao = new CargoDAO();
     int id;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -64,7 +64,18 @@ public class ControladorCargo extends HttpServlet {
         String action=request.getParameter("accion");
         if (action.equalsIgnoreCase("listar")){
               acceso=listar;            
-        }
+        }else if(action.equalsIgnoreCase("Inicio")){
+            acceso = inicio;
+        }else if(action.equalsIgnoreCase("add")){
+            acceso = add;
+        }else if(action.equalsIgnoreCase("Agregar")){
+            String nombre = request.getParameter("txtNombre");
+            String descripcion = request.getParameter("txtDescripcion");
+            cargo.setNombre(nombre);
+            cargo.setDescripcion(descripcion);
+            dao.add(Cargo);
+            acceso = listar;     
+        
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
