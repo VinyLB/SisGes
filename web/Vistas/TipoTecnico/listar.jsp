@@ -43,7 +43,7 @@
                         <td><%=tipoTecnico.getDescripcion()%></td>
                         <td>
                             <a href="ControladorTipoTecnico?accion=editar&id=<%=tipoTecnico.getIdTipoTecnico()%>">Editar</a>
-                            <a>Remover</a>
+                            <a href="ControladorTipoTecnico?accion=eliminar&id=<%=tipoTecnico.getIdTipoTecnico()%>">Remover</a>
                         </td>
                     </tr>
                     <%}%>

@@ -87,6 +87,12 @@ public class ControladorTipoTecnico extends HttpServlet {
             tipoTecnicoDAO.edit(tipoTecnico);
             acceso=listar;
         }
+        else if(action.equalsIgnoreCase("eliminar")){ 
+            id=Integer.parseInt(request.getParameter("id"));
+            tipoTecnico.setIdTipoTecnico(id);
+            tipoTecnicoDAO.eliminar(id);
+            acceso=listar;
+        }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
