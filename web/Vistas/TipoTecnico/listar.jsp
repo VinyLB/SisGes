@@ -42,13 +42,14 @@
                         <td><%=tipoTecnico.getNombre()%></td>
                         <td><%=tipoTecnico.getDescripcion()%></td>
                         <td>
-                            <a>Editar</a>
-                            <a>Remover</a>
+                            <a href="ControladorTipoTecnico?accion=editar&id=<%=tipoTecnico.getIdTipoTecnico()%>">Editar</a>
+                            <a href="ControladorTipoTecnico?accion=eliminar&id=<%=tipoTecnico.getIdTipoTecnico()%>">Remover</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
+                <a href="ControladorTipoTecnico?accion=Inicio">Regresar</a>
 
         </div>
     </body>

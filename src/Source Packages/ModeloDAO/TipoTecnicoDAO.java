@@ -51,7 +51,20 @@ public class TipoTecnicoDAO implements CRUDtipotecnico {
 
     @Override
     public TipoTecnico list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="select * from TipoTecnicos where idTipoTecnico="+id;
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                tipoTecnico.setIdTipoTecnico(rs.getInt("idTipoTecnico"));
+                tipoTecnico.setNombre(rs.getString("Nombre"));
+                tipoTecnico.setDescripcion(rs.getString("Descripcion"));
+            }
+        } catch (Exception e) {
+            System.out.println("ModeloDAO.TipoTecnicoDAO.listar() " + e);
+        }
+        return tipoTecnico;
     }
 
     @Override
@@ -68,12 +81,26 @@ public class TipoTecnicoDAO implements CRUDtipotecnico {
 
     @Override
     public boolean edit(TipoTecnico tipoTecnico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="update TipoTecnicos set Nombre='"+tipoTecnico.getNombre()+"',Descripcion='"+tipoTecnico.getDescripcion()+"'where idTipoTecnico="+tipoTecnico.getIdTipoTecnico();
+        try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql="delete from TipoTecnicos where idTipoTecnico="+id;
+        try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
     
 }

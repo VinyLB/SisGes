@@ -6,7 +6,6 @@
 package Clases;
 
 
-
 /**
  *
  * @author DELL 14
@@ -16,6 +15,9 @@ public class Cargo {
  private Integer idcargo;
  private String nombre;
  private String descripcion;
+
+    public Cargo() {        
+    }
 
     public Integer getIdcargo() {
         return idcargo;
@@ -47,5 +49,5 @@ public class Cargo {
         this.descripcion = descripcion;
     }
 
-       
+    
 }
