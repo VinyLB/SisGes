@@ -18,7 +18,7 @@
     <body>
         <div>
             <h1>Cargos</h1>
-            <a href="ControladorCargo?accion=add">Agregar Nuevo</a>
+            <a href="Controladorcargo?accion=add">Agregar Nuevo</a>
             <table border="1">
                 <thead>
                     <tr>
@@ -32,24 +32,24 @@
                     CargoDAO dao = new CargoDAO();
                     List<Cargo>list=dao.Listar();
                     Iterator<Cargo>iter=list.iterator();
-                    Cargo cargo = null;
+                    Cargo car = null;
                     while(iter.hasNext()){
-                        cargo=iter.next();                    
+                        car=iter.next();                    
                 %>
                 <tbody>
                     <tr>
-                        <td><%=cargo.getIdcargo()%></td>
-                        <td><%=cargo.getNombre()%></td>
-                        <td><%=cargo.getDescripcion()%></td>
+                        <td><%=car.getIdCargo()%></td>
+                        <td><%=car.getNombre()%></td>
+                        <td><%=car.getDescripcion()%></td>
                         <td>
-                            <a href="ControladorCargo?accion=Editar&idCargo=<%= cargo.getIdcargo()%>">Editar</a>
-                            <a href="ControladorCargo?accion=Eliminar&idCargo=<%= cargo.getIdcargo()%>">Remover</a>
+                            <a href="Controladorcargo?accion=Editar&idCargo=<%= car.getIdCargo()%>">Editar</a>
+                            <a href="Controladorcargo?accion=Eliminar&idCargo=<%= car.getIdCargo()%>">Remover</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
-                <a href="ControladorCargo?accion=Inicio">Regresar</a>
+                <a href="Controladorcargo?accion=Inicio">Regresar</a>
 
         </div>
     </body>
