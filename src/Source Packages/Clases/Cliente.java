@@ -93,6 +93,9 @@ public class Cliente {
         this.direccion = direccion;
         this.correo = correo;
     }
+
+    public Cliente() {
+    }
     
     
     

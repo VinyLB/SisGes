@@ -13,6 +13,7 @@
     </head>
     <body>
         <div>
+            <a href="ControladorCliente?accion=listar">Listar Clientes</a><br>
             <a href="ControladorEspecialidad?accion=listar">Listar Especialidad</a><br/>
             <a href="ControladorTipoTecnico?accion=listar">Listar Tipo de Tecnicos</a>
         </div>

@@ -20,6 +20,10 @@
         <servlet-name>ControladorTipoTecnico</servlet-name>
         <servlet-class>Controlador.ControladorTipoTecnico</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorCliente</servlet-name>
+        <servlet-class>Controlador.ControladorCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ControladorTipoTecnico</servlet-name>
         <url-pattern>/ControladorTipoTecnico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorCliente</servlet-name>
+        <url-pattern>/ControladorCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
