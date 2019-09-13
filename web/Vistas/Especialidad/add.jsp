@@ -9,18 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Agregar Especialidad</title>
     </head>
     <body>
         <div>
-            <h1>Agregar Especialidad</h1>
+            <h1 class="bg-primary text-center">Agregar Especialidad</h1>
             <form action="ControladorEspecialidad">
-                NOMBRE:<br>
-                <input type="text" name="txtNombre"><br>
-                DESCRIPCION:<br>
-                <input type="text" name="txtDescripcion"><br>
-                <input type="submit" name="accion" value="Agregar"><br>
-                <a href="ControladorEspecialidad?accion=listar">Regresar</a>
+                <div class="form-group-sm">
+                <label for="nombre" class="col-md-1">NOMBRE:</label>
+                <input class="form-control" type="text" name="txtNombre"><br>
+                </div>
+                <label for="descripcion" class="col-md-1">DESCRIPCION:</label>
+                <input class="form-control" type="text" name="txtDescripcion"><br>
+                <input type="submit" name="accion" value="Agregar" class="btn btn-primary"><br><br>
+                <a class="btn btn-warning" href="ControladorEspecialidad?accion=listar">Regresar</a>
             </form>
         </div>
         

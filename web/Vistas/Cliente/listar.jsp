@@ -21,7 +21,7 @@
             <h1 class="bg-primary text-center">Clientes</h1>
             <div class="container col-md-2">
                 <a class="btn btn-block btn-lg btn-primary" href="ControladorCliente?accion=add">Agregar Nuevo</a><br><br>
-            <div class="container-fluid">
+            <div class="container">
             <table class="table table-hover">
                 <thead>
                     <tr>

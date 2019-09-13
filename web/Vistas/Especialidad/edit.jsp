@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body>
@@ -21,15 +22,17 @@
                 Especialidad especialidad=(Especialidad) especialidadDAO.list(id);
                 
             %>
-            <h1>Editar Especialidad</h1>
+            <h1 class="bg-primary text-center">Editar Especialidad</h1>
             <form action="ControladorEspecialidad">
-                NOMBRE:<br>
-                <input type="text" name="txtNombre" value="<%=especialidad.getNombre()%>"><br>
-                DESCRIPCION:<br>
-                <input type="text" name="txtDescripcion" value="<%=especialidad.getDescripcion()%>"><br>
+                <div class="form-group-sm">
+                <label for="nombre" class="col-md-1">NOMBRE:</label>
+                <input class="form-control" type="text" name="txtNombre" value="<%=especialidad.getNombre()%>"><br>
+                </div>
+                <label for="descripcion" class="col-md-1">DESCRIPCION:</label>
+                <input class="form-control" type="text" name="txtDescripcion" value="<%=especialidad.getDescripcion()%>"><br>
                 <input type="hidden" name="txtId" value="<%=especialidad.getIdEspecialidad()%>"><br>
-                <input type="submit" name="accion" value="Actualizar"><br>
-                <a href="ControladorEspecialidad?accion=listar">Regresar</a>
+                <input type="submit" name="accion" value="Actualizar" class="btn btn-primary"><br><br>
+                <a class="btn btn-warning" href="ControladorEspecialidad?accion=listar">Regresar</a>
             </form>
         </div>
     </body>
