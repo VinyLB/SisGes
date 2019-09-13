@@ -19,7 +19,7 @@ public class CargoDAO implements CRUDCargos {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Cargo c=new Cargo();
+    Cargo cargo=new Cargo();
 
     @Override
     public List Listar() {
@@ -45,7 +45,7 @@ public class CargoDAO implements CRUDCargos {
 
     @Override
     public Cargo list(int idCargo) {
-        String sql="select * from cargo where idCargo=" + idCargo;
+        String sql="select * from cargos where idCargo=" + idCargo;
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -64,7 +64,7 @@ public class CargoDAO implements CRUDCargos {
 
     @Override
     public boolean add(Cargo car) {
-        String sql = "insert into cargo (nombre, descripcion) values('" + car.getNombre() + "','" + car.getDescripcion() + "')";
+        String sql = "insert into cargos(nombre, descripcion) values('" + car.getNombre() + "','" + car.getDescripcion() + "')";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);

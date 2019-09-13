@@ -27,7 +27,7 @@
                 <input type="text" name="txtNombre" value="<%=cargo.getNombre()%>"><br>
                 DESCRIPCION:<br>
                 <input type="text" name="txtDescripcion" value="<%=cargo.getDescripcion()%>"><br>
-                <input type="hidden" name="txtIdCargo" value="<%=cargo.getIdcargo()%>"><br>
+                <input type="hidden" name="txtIdCargo" value="<%=cargo.getIdCargo()%>"><br>
                 <input type="submit" name="accion" value="Actualizar"><br>
                 <a href="ControladorCargo?accion=listar">Regresar</a>
             </form>

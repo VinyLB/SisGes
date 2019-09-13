@@ -18,7 +18,7 @@
     <body>
         <div>
             <h1>Cargos</h1>
-            <a href="Controladorcargo?accion=add">Agregar Nuevo</a>
+            <a href="ControladorCargo?accion=add">Agregar Nuevo</a>
             <table border="1">
                 <thead>
                     <tr>
@@ -42,14 +42,14 @@
                         <td><%=car.getNombre()%></td>
                         <td><%=car.getDescripcion()%></td>
                         <td>
-                            <a href="Controladorcargo?accion=Editar&idCargo=<%= car.getIdCargo()%>">Editar</a>
-                            <a href="Controladorcargo?accion=Eliminar&idCargo=<%= car.getIdCargo()%>">Remover</a>
+                            <a href="ControladorCargo?accion=Editar&idCargo=<%= car.getIdCargo()%>">Editar</a>
+                            <a href="ControladorCargo?accion=Eliminar&idCargo=<%= car.getIdCargo()%>">Remover</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
-                <a href="Controladorcargo?accion=Inicio">Regresar</a>
+                <a href="ControladorCargo?accion=Inicio">Regresar</a>
 
         </div>
     </body>

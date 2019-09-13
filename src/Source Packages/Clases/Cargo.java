@@ -12,18 +12,15 @@ package Clases;
  */
 public class Cargo {
     
- private Integer idCargo;
+ private int idCargo;
  private String nombre;
  private String descripcion;
 
-    public Cargo() {        
-    }
-
-    public Integer getIdCargo() {
+    public int getIdCargo() {
         return idCargo;
     }
 
-    public void setIdCargo(Integer idcargo) {
+    public void setIdCargo(int idCargo) {
         this.idCargo = idCargo;
     }
 
@@ -43,11 +40,16 @@ public class Cargo {
         this.descripcion = descripcion;
     }
 
-    public Cargo(Integer idcargo, String nombre, String descripcion) {
+    public Cargo(int idCargo, String nombre, String descripcion) {
         this.idCargo = idCargo;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    
+    public Cargo() {
+    }
+ 
+ 
+ 
+        
 }
