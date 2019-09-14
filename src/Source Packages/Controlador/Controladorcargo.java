@@ -76,8 +76,8 @@ String listar="Vistas/Cargo/listar.jsp";
         else if (action.equalsIgnoreCase("agregar")){
             String nom=request.getParameter("txtNombre");
             String desc=request.getParameter("txtDescripcion");
-            c.setnom (nom);
-            c.setdesc (desc);
+            c.setNombre(nom);
+            c.setDescripcion(desc);
             dao.add(c);
             acceso=listar;
         }
