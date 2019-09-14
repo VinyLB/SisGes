@@ -96,7 +96,13 @@ public class Cliente {
 
     public Cliente() {
     }
+
+    public Cliente(String cedula) {
+        this.cedula = cedula;
+    }
     
-    
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
     
 }

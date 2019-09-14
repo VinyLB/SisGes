@@ -11,7 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Editar Cargo</title>
     </head>
     <body>
         <div>
@@ -21,15 +22,17 @@
                 Cargo cargo=(Cargo) cargoDAO.list(id);
                 
             %>
-            <h1>Editar Cargo</h1>
+            <h1 class="bg-primary text-center">Editar Cargo</h1>
             <form action="ControladorCargo">
-                NOMBRE:<br>
-                <input type="text" name="txtNombre" value="<%=cargo.getNombre()%>"><br>
-                DESCRIPCION:<br>
-                <input type="text" name="txtDescripcion" value="<%=cargo.getDescripcion()%>"><br>
+                <div class="form-group-sm">
+                <label for="nombre" class="col-md-1">NOMBRE:</label>
+                <input class="form-control" type="text" name="txtNombre" value="<%=cargo.getNombre()%>"><br>
+                </div>
+                <label for="descripcion" class="col-md-1">DESCRIPCION:</label>
+                <input class="form-control" type="text" name="txtDescripcion" value="<%=cargo.getDescripcion()%>"><br>
                 <input type="hidden" name="txtIdCargo" value="<%=cargo.getIdCargo()%>"><br>
-                <input type="submit" name="accion" value="Actualizar"><br>
-                <a href="ControladorCargo?accion=listar">Regresar</a>
+                <input type="submit" name="accion" value="Actualizar" class="btn btn-primary"><br>
+                <a class="btn btn-warning" href="ControladorCargo?accion=listar">Regresar</a>
             </form>
         </div>
     </body>

@@ -19,6 +19,7 @@
             <a class="btn btn-block btn-lg btn-success" href="ControladorEspecialidad?accion=listar">Listar Especialidad</a><br/>
             <a class="btn btn-block btn-lg btn-info" href="ControladorTipoTecnico?accion=listar">Listar Tipo de Tecnicos</a><br/>
             <a class="btn btn-block btn-lg btn-warning" href="ControladorCargo?accion=listar">Listar Cargo</a><br/>
+            <a class="btn btn-block btn-lg btn-primary" href="ControladorEquipo?accion=listar">Listar Equipo</a><br/>
         </div>
     </body>
 </html>
