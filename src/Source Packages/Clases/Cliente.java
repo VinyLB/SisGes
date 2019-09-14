@@ -105,4 +105,8 @@ public class Cliente {
         return nombre + " " + apellido;
     }
     
+    public String getUsuarioCorreo() {
+        return usuario + " " + correo;
+    }
+    
 }
